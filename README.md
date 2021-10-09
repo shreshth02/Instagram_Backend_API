@@ -1,16 +1,16 @@
-## Task Submission for Appointy, made in Go.
+Task Submission for Appointy, made in Go.
 The task is to develop a basic version of Instagram. We are only required to develop the API for the system.
 
-## Getting Started
+Getting Started
 
 Installation prerequisites include only an Installation of Go on your system.
 
 After installing Go, Run the following commands to run the API locally: -
 
-## Downloading the starter kit:
+Downloading the starter kit:
 git clone https://github.com/shreshth02/Instagram_Backend_API.git
 
-# and then
+and then
 go run main.go
 
 The following endpoints are available:
