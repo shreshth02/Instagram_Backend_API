@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "93b04a29-580e-43be-bb6c-847ab79c16d5",
+		"name": "test-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Add new user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Shreshth Jaiswal\",\r\n    \"email\": \"abhayj02s@gmail.com\",\r\n    \"password\": \"pAssword123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiIiLCJleHAiOjE2MzM4MjAwOTl9.joMBhUK1kLKlfVdgA_kUmWSCS3onwJLu-TtEFNXy2uc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/:user_id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "61614ac33116c297443a5183"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user (workflow disabled by default)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"abhayj02s@gmail.com\",\r\n    \"password\": \"pAssword123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Create post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI2MTYxNGFjMzMxMTZjMjk3NDQzYTUxODMiLCJleHAiOjE2MzM4Mjc2Mjl9.MO2_pb3l7zf3tbAVjGIjuPmpGtt75R7_R_FmIobEqkA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"caption\": \"Sunshine and you shine.\",\r\n    \"image_url\": \"["https://imgur.com/t/sunshine/1kWtN7D"]\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/posts",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Post by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI2MTYxNmZhNTI4NDgzY2RhZjE4MTY1M2YiLCJleHAiOjE2MzM4Mjk1MzF9.sox4C-tiiiZ8X6AhM9eBRfBu6z1JDKCxEbU3cIwNaew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/posts/:post_id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts",
+								":post_id"
+							],
+							"variable": [
+								{
+									"key": "post_id",
+									"value": "61616fb728483cdaf1816542"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Posts of a user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI2MTYxNmZhNTI4NDgzY2RhZjE4MTY1M2YiLCJleHAiOjE2MzM4Mjk1MzF9.sox4C-tiiiZ8X6AhM9eBRfBu6z1JDKCxEbU3cIwNaew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/posts/users/:user_id?page=1&limit=4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts",
+								"users",
+								":user_id"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "4"
+								}
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "61616fa528483cdaf181653f"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:3000"
+		}
+	]
+}
