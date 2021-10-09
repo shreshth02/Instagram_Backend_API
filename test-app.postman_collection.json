@@ -113,7 +113,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"caption\": \"Sunshine and you shine.\",\r\n    \"image_url\": \"["https://imgur.com/t/sunshine/1kWtN7D"]\"\r\n}",
+							"raw": "{\r\n    \"caption\": \"Sunshine and you shine.\",\r\n    \"image_url\": \"[https://imgur.com/t/sunshine/1kWtN7D]\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
